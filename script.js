@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'The Unfolding Story',
             desc: 'It began with simple chats and conversations that beautifully bridged the distance between us, evolving from words on a screen to voices in the air. What started as a long-distance connection soon blossomed into frequent, cherished meetings. Each shared story, every knowing glance, and especially the many, many laughs we\'ve had, are building something truly beautiful. It\'s in these everyday moments – the easy banter, the comfortable silences, the sheer joy of just being together – that love isn\'t just growing; it\'s deeply taking root, surprising us with its quiet strength.',
             images: [
-                ['images/3rooted/1firstPhoto.jpeg','The very first photo of you sent to Joel'],
+                ['images/3rooted/1firstphoto.jpeg','The very first photo of you sent to Joel'],
                 ['images/3rooted/lovely.jpeg','Took selfies together when no one was watching'],
                 ['images/3rooted/bikeride.jpeg','This ride was so special, Laaaa...'],
                 ['images/3rooted/railwaytbm.jpeg','Leaving Joel\'s place after a long day'],
