@@ -1,0 +1,1176 @@
+/* Image popup title overlay */
+.img-popup-title {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 0 8px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.500) 100%, rgba(0, 0, 0, 0.100) 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 16px 16px 0 0;
+    z-index: 2;
+    pointer-events: none;
+    /* text-shadow: 0 2px 8px #ad1457, 0 1px 2px #000; */
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    user-select: none;
+    line-height: 1.3;
+    opacity: 0.96;
+    overflow: hidden;
+}
+
+/* Ensure .img-popup-title overlays correctly in .image-popup and .circle-img-preview */
+.image-popup {
+    position: relative;
+    overflow: hidden;
+}
+.circle-img-preview {
+    position: absolute !important;
+    overflow: hidden;
+}
+.circle-img-preview .img-popup-title {
+    border-radius: 14px 14px 0 0;
+    font-size: 1rem;
+    padding: 8px 0 6px 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.500) 100%, rgba(0, 0, 0, 0.100) 100%);
+}
+
+@media (max-width: 700px) {
+  .img-popup-title {
+    font-size: 0.95rem;
+    padding: 7px 0 5px 0;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    bottom: auto;
+    z-index: 3;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.500) 100%, rgba(0, 0, 0, 0.100) 100%);
+    color: #fff;
+    pointer-events: none;
+    box-sizing: border-box;
+    user-select: none;
+    opacity: 0.96;
+    display: block;
+    overflow: hidden;
+  }
+  .image-popup, .circle-img-preview {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .circle-img-preview .img-popup-title {
+    font-size: 0.85rem;
+    padding: 5px 0 4px 0;
+    border-radius: 8px 8px 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    bottom: auto;
+    z-index: 3;
+    display: block;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.500) 100%, rgba(0, 0, 0, 0.100) 100%);
+    overflow: hidden;
+  }
+}
+/* grid areas */
+.sidebar { grid-area: sidebar; }
+header { grid-area: header; }
+main.main-content { grid-area: main; padding: 0 16px; }
+footer { grid-area: footer; }
+
+/* Sidebar width */
+:root {
+   --sidebar-width: 180px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 180px;
+    background: linear-gradient(180deg, #f3acb8 0%, #fb3768 100%);
+    box-shadow: 2px 0 8px rgba(255, 23, 68, 0.07);
+    z-index: 100;
+    border-right: #fd94a5 1.5px solid;
+}
+.navbar-nav{
+    margin-top: 30px !important;
+}
+
+.sidebar ul.navbar-nav {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #920043;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+    border-left: 4px solid transparent;
+    border-radius: 0;
+    background: transparent;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #e37098;
+    color: #d50000;
+    border-left: 6px solid whitesmoke;
+    border-radius: 0;
+}
+
+/* Mobile navbar menu fill */
+.navbar-nav .nav-link {
+    border-radius: 0 !important;
+    background: transparent;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar-nav .nav-link.active {
+    background: #C90E59 !important;
+    color: white !important;
+}
+.navbar-nav .nav-link:hover {
+    background: #F0245A;
+    color: white !important;
+    font-weight: bold;
+}
+/* Ensure nav fills width on mobile */
+.navbar-nav {
+    width: 100%;
+}
+.navbar-nav .nav-item {
+    width: 100%;
+}
+
+/* Profile icon */
+.nav-profile-icon {
+    display: block;
+    margin: 20px auto 18px 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(255, 0, 51, 0.84);
+    object-fit: cover;
+    border: whitesmoke 3px solid;
+    transition: transform 0.3s ease;
+}
+.nav-profile-icon:hover {
+  transform: scale(1.35); /* Zooms the image to 135% of its original size */
+}
+
+/* Profile icon as hamburger on mobile: better sizing and alignment */
+@media (max-width: 768px) {
+  .navbar-toggler.nav-profile-icon {
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+  }
+  .navbar-toggler.nav-profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(255, 0, 51, 0.3);
+    border: 2px solid #fff;
+    display: block;
+    margin: 0;
+  }
+  .navbar-toggler.nav-profile-icon {
+    margin-left: auto;
+    margin-right: 10px;
+    order: 2;
+    position: absolute;
+    right: 10px;
+    top: -5px !important;
+    z-index: 1051; /* above navbar content */
+  }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    padding-top: 0.5rem;
+  }
+  .navbar{
+    background: linear-gradient(90deg, #f9a8c3 0%, #f76a87 100%);
+    border-bottom: #a8001c 4px solid;
+    margin: 0 !important;
+  }
+  .navbar-nav {
+    margin: 0 !important;
+  }
+  .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  nav a {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+        box-sizing: border-box;
+    }
+  nav a.active,
+    nav a:hover {
+        background: #f683ab;
+        color: #d50000;
+        border-bottom: 2px solid whitesmoke;
+        border-left: none;
+    }
+  .nav-profile-icon {
+        width: 40px;
+        height: 40px;
+        margin: .3em;
+        margin-left: 15px;
+        border: 2.5px solid whitesmoke;
+   }
+  .nav-profile-icon:hover {
+      transform: scale(1.35);
+  }
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    color: transparent;
+    margin-right: 10px;
+  }
+  
+  .custom-toggler-icon {
+    font-size: 1.7rem;
+    color: #5A0017; /* Change to your desired color */
+  }
+  .custom-toggler-icon::before {
+    /* content: "\2630";  */
+    color: #5A0017; /* Change to your desired color */
+  }
+}
+
+
+/* Header & Footer Base Styles */
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 12;
+}
+
+/* Header */
+header {
+    height: 100px;
+    background: linear-gradient(90deg, #F10A44 0%, #C8184F 100%);
+    box-shadow: 0 2px 8px rgba(255, 23, 68, 0.08);
+    padding: 0 16px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow:
+        1px 2px 8px #ff80ab,
+        2px 2px 2px #ad1457,
+        -2px -2px 2px #ad1457,
+        2px -2px 2px #ad1457,
+        -2px 2px 2px #ad1457;
+}
+/* Hide mobile line break by default */
+.mobile-break {
+    display: none;
+}
+
+/* Footer */
+footer {
+    height: 48px; /* Reduced height */
+    background: linear-gradient(90deg, #F10A44 0%, #C8184F 100%);
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(255, 23, 68, 0.07);
+}
+
+
+
+
+body {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  min-height: 100vh;
+  margin: 0;
+  /* background-image: url('images/2rw32a.jpg'); */
+}
+/* Add a dimmed background image layer */
+.body-bg-dim {
+  position: fixed;
+  z-index: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 23, 68, 0.200), rgba(255, 23, 69, 0.200)),
+
+    url('images/mainbg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(1.7px);
+}
+
+@media (max-width: 768px) {
+  .body-bg-dim {
+    position: fixed;
+    z-index: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(255, 23, 68, 0.200), rgba(255, 23, 69, 0.200)),
+      url('images/mainbg.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+/* Make sure main content, header, sidebar, footer are above the background */
+main.main-content,
+.navbar {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+@media (max-width: 768px) {    
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .sidebar,
+  header,
+  main.main-content,
+  footer {
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+    font-size: 1rem;
+    text-align: center;
+  }
+  main.main-content {
+    flex: 1 0 auto;
+  }
+  footer {
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .main-content {
+    padding: 0 12px;
+  }
+
+  header, footer, .navbar {
+        height: auto;
+        padding: 8px 0;
+        z-index: 12;
+}
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .typed {
+    font-size: 1.3rem;
+  }
+
+  .hb-wish {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #ad1457 !important;
+  }
+}
+
+.hb-wish {
+    font-size: 1.5rem;
+    color: #ad1457;
+    text-align: center;
+    font-weight: bold;
+}
+
+.wordart-container {
+    width: 100%;
+    max-width: 850px;
+    min-height: 300px;
+    aspect-ratio: 16/7;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+}
+
+.wordart-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: none;
+    display: block;
+    border-radius: 18px;
+    background: transparent;
+}
+.wordart-container a[href*="wordart.com"] {
+  display: none !important;
+}
+
+
+/* Responsive for small screens */
+@media (max-width: 700px) {
+    .wordart-container {
+        max-width: 100vw;
+        width: 100vw;
+        min-height: 160px;
+        aspect-ratio: 16/10;
+        padding: 0 2vw;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .wordart-container iframe {
+        min-height: 160px;
+        width: 100vw;
+        max-width: 100vw;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+}
+
+/* --- Desktop Notice Styles --- */
+@media (max-width: 600px) {
+  .desktop-notice {
+    display: block;
+    background: #fff0f5;
+    color: #a8001c;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 8px;
+    border: 2px solid #ff1744;
+    border-radius: 10px;
+    margin: 12px auto 0 auto;
+    max-width: 95vw;
+    box-shadow: 0 2px 8px #a8001c22;
+    z-index: 9999;
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s, transform 0.4s;
+  }
+}
+@media (min-width: 601px) {
+  .desktop-notice {
+    display: none;
+  }
+}
+
+.moment {
+    display: flex;
+    align-items: center;
+    background: rgba(235, 133, 167, 0.50); /* slightly transparent */
+    border: #ad1457 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 23, 69, 0.501);
+    padding: 24px 18px;
+    margin: 18px 0;
+    max-width: auto;
+    color: #ad1457;
+    gap: 24px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: opacity 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1);
+    /* Animation container for child elements */
+}
+.moment.moment-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.moment-img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 23, 68, 0.12);
+}
+.moment-left {
+    flex-direction: row;
+    text-align: left;
+}
+.moment-right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.moment-text {
+    flex: 1;
+    font-size: 1.2rem !important;
+}
+.moment-text-left {
+    text-align: left;
+}
+.moment-text-right {
+    text-align: right;
+}
+.moment-left .moment-img,
+.moment-left .moment-text {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1);
+}
+.moment-left.moment-visible .moment-img {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+}
+.moment-left.moment-visible .moment-text {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+.moment-right .moment-img,
+.moment-right .moment-text {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1);
+}
+.moment-right.moment-visible .moment-img {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+}
+.moment-right.moment-visible .moment-text {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+.moment-title{
+    font-weight: bold;
+}
+
+/* Circles for image preview */
+.moment-circles {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+.moment-left .moment-circles {
+    justify-content: flex-start;
+}
+.moment-right .moment-circles {
+    justify-content: flex-end;
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(rgba(255, 23, 68, 0.200), rgba(255, 23, 69, 0.200)), url(images/circleeye.jpeg) no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    border: #a8001c 1px solid;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 23, 68, 0.13);
+    transition: background 0.2s;
+}
+.circle:hover {
+    background:url(images/circleicon.jpeg) no-repeat center center;
+    background-size: cover;
+    /* background: #f6003182; */
+}
+
+/* Image preview on circle hover */
+.circle-img-preview {
+    position: fixed;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(.4,2,.6,1), transform 0.35s cubic-bezier(.4,2,.6,1);
+    /* Show above the circle: offset upward by image height + gap (e.g. 40px) */
+    transform: translate(-50%, calc(-100% - 40px)) scale(0.7);
+    left: unset;
+}
+.circle-img-preview.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, calc(-100% - 40px)) scale(1);
+}
+
+.circle-img-preview img {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(255, 23, 68, 0.22);
+    background: #fff;
+    display: block;
+}
+
+@media (max-width: 700px) {
+  .circle {
+    width: 25px;
+    height: 25px;
+  }
+  .circle-img-preview {
+    left: 50vw !important;
+    right: unset !important;
+    transform: translate(-50%, 0) scale(1) !important;
+    position: fixed !important;
+    z-index: 9999;
+    max-width: 90vw;
+    top: auto !important;
+    bottom: 110px !important; /* Adjust this value to match the distance above your circles/footer */
+    padding-bottom: 0;
+  }
+  .circle-img-preview img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+/* Image preview popup styles */
+.image-popup-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 23, 68, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(.4,2,.6,1);
+}
+.image-popup-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.image-popup {
+    background: #5A0017;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(255, 23, 68, 0.22);
+    padding: 2px;
+    animation: popupScaleIn 0.35s cubic-bezier(.4,2,.6,1);
+}
+.image-popup img {
+    max-width: 96vw;
+    max-height: 96vh;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.22);
+    background: #fff;
+    display: block;
+    animation: popup-zoom-in 0.35s cubic-bezier(.4,2,.6,1);
+}
+@keyframes popup-zoom-in {
+    from {
+        transform: scale(0.7);
+        opacity: 0.3;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popupScaleIn {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+body.popup-blur #main-content,
+body.popup-blur nav,
+body.popup-blur .heart {
+    filter: blur(6px) brightness(0.95);
+    transition: filter 0.35s cubic-bezier(.4,2,.6,1);
+}
+
+body.popup-blur #main-content {
+    visibility: hidden;
+}
+
+/* --- Sequential Moment Animation --- */
+.moment-img,
+.moment-title,
+.moment-desc,
+.moment-circles .circle {
+    opacity: 0;
+    transition:
+        opacity 0.5s cubic-bezier(.4,2,.6,1),
+        transform 0.5s cubic-bezier(.4,2,.6,1);
+}
+
+/* LEFT: animate from right */
+.moment-left .moment-img,
+.moment-left .moment-title,
+.moment-left .moment-desc,
+.moment-left .moment-circles .circle {
+    transform: translateX(60px);
+}
+.moment-left.moment-visible .moment-img {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.10s;
+}
+.moment-left.moment-visible .moment-title {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.22s;
+}
+.moment-left.moment-visible .moment-desc {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.34s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.46s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.54s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.62s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.70s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.78s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(6) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.86s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(7) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.94s;
+}
+.moment-left.moment-visible .moment-circles .circle:nth-child(8) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.02s;
+}
+/* Add more nth-child if you have more circles */
+
+/* RIGHT: animate from left */
+.moment-right .moment-img,
+.moment-right .moment-title,
+.moment-right .moment-desc,
+.moment-right .moment-circles .circle {
+    transform: translateX(-60px);
+}
+.moment-right.moment-visible .moment-img {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.10s;
+}
+.moment-right.moment-visible .moment-title {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.22s;
+}
+.moment-right.moment-visible .moment-desc {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.34s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.46s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.54s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.62s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.70s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.78s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(6) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.86s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(7) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.94s;
+}
+.moment-right.moment-visible .moment-circles .circle:nth-child(8) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.02s;
+}
+/* Add more nth-child if you have more circles */
+
+
+/* On mobile, keep the existing style and animation direction for moments */
+@media (max-width: 600px) {
+    .moment {
+        flex-direction: column;
+        gap: 8px;
+        max-width: 98vw;
+        padding: 8px 2px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .moment-img {
+        width: 100vw;
+        max-width: 160px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .moment-text {
+        margin-top: 12px;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem !important;
+    }
+    .moment-circles {
+        justify-content: center !important;
+        width: 100%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Animation: all moment content animates vertically */
+    .moment-left .moment-img,
+    .moment-left .moment-title,
+    .moment-left .moment-desc,
+    .moment-left .moment-circles .circle,
+    .moment-right .moment-img,
+    .moment-right .moment-title,
+    .moment-right .moment-desc,
+    .moment-right .moment-circles .circle {
+        transform: translateY(40px);
+    }
+    .moment-left.moment-visible .moment-img,
+    .moment-left.moment-visible .moment-title,
+    .moment-left.moment-visible .moment-desc,
+    .moment-left.moment-visible .moment-circles .circle,
+    .moment-right.moment-visible .moment-img,
+    .moment-right.moment-visible .moment-title,
+    .moment-right.moment-visible .moment-desc,
+    .moment-right.moment-visible .moment-circles .circle {
+        transform: translateY(0);
+    }
+}
+
+
+/* Heart shapes for decoration */
+.heart {
+    position: fixed; /* Keep hearts relative to viewport */
+    width: 32px;
+    height: 32px;
+    background: #ff80ab;
+    left: 0;
+    bottom: -40px;    /* Start just below the viewport */
+    transform: rotate(-45deg);
+    z-index: 0;
+    opacity: 0.7;
+    animation: floatHeart 45s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+.heart.pink { background: #ffb6c1; }
+.heart.red { background: #a8001c; }
+.heart.light { background: #ff1744; }
+/* .heart.small { width: 15px; height: 15px; }
+.heart.medium { width: 22px; height: 22px; }
+.heart.large { width: 32px; height: 32px; } */
+.heart.small { width: 11.25px; height: 11.25px; }
+.heart.medium { width: 16.5px; height: 16.5px; }
+.heart.large { width: 24px; height: 24px; }
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -50%;
+    left: 0;
+}
+.heart:after {
+    left: 50%;
+    top: 0;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) scale(1) rotate(-45deg);
+    }
+    10% {
+        opacity: 0.7;
+        transform: translateY(-10vh) translateX(24px) scale(1.03) rotate(-45deg);
+    }
+    20% {
+        transform: translateY(-20vh) translateX(-24px) scale(1.06) rotate(-45deg);
+    }
+    30% {
+        transform: translateY(-30vh) translateX(20px) scale(1.09) rotate(-45deg);
+    }
+    40% {
+        transform: translateY(-40vh) translateX(-20px) scale(1.12) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(16px) scale(1.15) rotate(-45deg);
+    }
+    60% {
+        transform: translateY(-60vh) translateX(-16px) scale(1.18) rotate(-45deg);
+    }
+    70% {
+        transform: translateY(-70vh) translateX(12px) scale(1.21) rotate(-45deg);
+    }
+    80% {
+        transform: translateY(-80vh) translateX(-12px) scale(1.24) rotate(-45deg);
+    }
+    90% {
+        opacity: 0.7;
+        transform: translateY(-100vh) translateX(8px) scale(1.27) rotate(-45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-110vh) translateX(-8px) scale(1.3) rotate(-45deg);
+    }
+}
+
+/* Assign heart sizes and colors so that similar sizes are not adjacent */
+
+
+.heart1  { left:2vw;   animation-delay: 7.2s;  }
+.heart2  { left:7vw;   animation-delay: 39.1s; }
+.heart3  { left:12vw;  animation-delay: 2.8s;  }
+.heart4  { left:17vw;  animation-delay: 28.6s; }
+.heart5  { left:22vw;  animation-delay: 32.4s; }
+.heart6  { left:27vw;  animation-delay: 19.7s; }
+.heart7  { left:32vw;  animation-delay: 0.5s;  }
+.heart8  { left:37vw;  animation-delay: 41.1s; }
+.heart9  { left:42vw;  animation-delay: 15.9s; }
+.heart10 { left:47vw;  animation-delay: 44.2s; }
+.heart11 { left:52vw;  animation-delay: 23.5s; }
+.heart12 { left:57vw;  animation-delay: 10.1s; }
+.heart13 { left:62vw;  animation-delay: 36.8s; }
+.heart14 { left:67vw;  animation-delay: 4.4s;  }
+.heart15 { left:72vw;  animation-delay: 26.2s; }
+.heart16 { left:77vw;  animation-delay: 39.9s; }
+.heart17 { left:82vw;  animation-delay: 21.6s; }
+.heart18 { left:87vw;  animation-delay: 17.3s; }
+.heart19 { left:92vw;  animation-delay: 35.5s; }
+.heart20 { left:98vw;  animation-delay: 9.0s;  }
+.heart21 { left:25vw;  animation-delay: 13.7s; }
+.heart22 { left:63vw;  animation-delay: 30.4s; }
+.heart23 { left:85vw;  animation-delay: 5.8s;  }
+
+/* Responsive heart sizes */
+@media (max-width: 600px) {
+  .heart.small { width: 9px; height: 9px; }
+  .heart.medium { width: 13.5px; height: 13.5px; }
+  .heart.large { width: 18px; height: 18px; }
+}
+
+/* Shrinked sidebar styles */
+.sidebar.shrinked {
+  width: 60px;
+  transition: width 0.3s;
+}
+.sidebar:not(.shrinked) {
+  width: 180px;
+  transition: width 0.3s;
+}
+
+/* Smooth transition for sidebar, header, main, footer, and body grid */
+.sidebar,
+header,
+main.main-content,
+footer,
+body {
+  transition: width 0.3s, margin-left 0.3s, grid-template-columns 0.3s, left 0.3s, right 0.3s, padding 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s, font-size 0.3s, border-radius 0.3s, top 0.3s, bottom 0.3s, max-width 0.3s, min-width 0.3s, min-height 0.3s, max-height 0.3s, height 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* Show/hide sidebar-link-char and sidebar-link-text */
+.sidebar.shrinked .sidebar-link-char {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar.shrinked .sidebar-link-text {
+  display: none;
+}
+.sidebar:not(.shrinked) .sidebar-link-char {
+  display: none;
+}
+.sidebar:not(.shrinked) .sidebar-link-text {
+  display: inline;
+}
+
+/* Smooth transition for nav-link text when sidebar shrinks/expands */
+.sidebar-link-text {
+  transition: 
+    opacity 0.3s cubic-bezier(.4,2,.6,1),
+    width 0.3s cubic-bezier(.4,2,.6,1),
+    margin 0.3s cubic-bezier(.4,2,.6,1);
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar.shrinked .sidebar-link-text {
+  opacity: 0;
+  width: 0;
+  margin-left: 0 !important;
+}
+
+.sidebar:not(.shrinked) .sidebar-link-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 0px !important;
+}
+
+/* Adjust layout when sidebar is shrinked */
+body.sidebar-shrinked {
+  grid-template-columns: 60px 1fr;
+}
+body.sidebar-shrinked header,
+body.sidebar-shrinked main.main-content,
+body.sidebar-shrinked footer {
+  /* margin-left: 60px;
+  width: calc(100% - 60px); */
+  transition: margin-left 0.3s, width 0.3s;
+}
+
+body:not(.sidebar-shrinked) {
+  grid-template-columns: 180px 1fr;
+}
+body:not(.sidebar-shrinked) header,
+body:not(.sidebar-shrinked) main.main-content,
+body:not(.sidebar-shrinked) footer {
+  transition: margin-left 0.3s, width 0.3s;
+}
+@media (max-width: 768px) {
+  body.sidebar-shrinked,
+  body:not(.sidebar-shrinked) {
+    grid-template-columns: 1fr;
+  }
+  body.sidebar-shrinked header,
+  body.sidebar-shrinked main.main-content,
+  body.sidebar-shrinked footer,
+  body:not(.sidebar-shrinked) header,
+  body:not(.sidebar-shrinked) main.main-content,
+  body:not(.sidebar-shrinked) footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Desktop: Adjust main content margin for sidebar */
+@media (min-width: 769px) {
+  body:not(.sidebar-shrinked) main.main-content {
+    width: calc(100% - 180px);
+    transition: margin-left 0.3s, width 0.3s;
+  }
+  body.sidebar-shrinked main.main-content {
+    
+    width: calc(100% - 60px);
+    transition: margin-left 0.3s, width 0.3s;
+  }
+}
+
+/* Remove margin on mobile */
+@media (max-width: 768px) {
+  main.main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
