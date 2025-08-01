@@ -415,7 +415,7 @@ body {
   }
   footer {
     flex-shrink: 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -1172,5 +1172,7 @@ body:not(.sidebar-shrinked) footer {
   main.main-content {
     margin-left: 0 !important;
     width: 100% !important;
+    flex: 1 0 auto;
+    min-height: 0;
   }
 }
