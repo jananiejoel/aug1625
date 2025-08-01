@@ -1172,7 +1172,5 @@ body:not(.sidebar-shrinked) footer {
   main.main-content {
     margin-left: 0 !important;
     width: 100% !important;
-    flex: 1 0 auto;
-    min-height: 0;
   }
 }
