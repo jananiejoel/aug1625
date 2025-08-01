@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ['images/4bridging/snackshop.jpeg','Lunch at the snack shop'],
                 ['images/4bridging/theatre.jpeg','Jananie was more perfect than a movie'],
                 ['images/4bridging/triedtohide.jpeg','Tried to hide but got caught on camera'],
+                ['images/4bridging/birdpark.jpeg','Bird park visit with Thangamayil'],
                 ['images/4bridging/unplanned.jpeg','Unplanned but perfect'],
                 ['images/4bridging/mostrecentmeeting.jpeg','The most recent meeting'],
             ]
