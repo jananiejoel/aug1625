@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ['images/3rooted/lovely.jpeg','Took selfies together when no one was watching'],
                 ['images/3rooted/bikeride.jpeg','This ride was so special, Laaaa...'],
                 ['images/3rooted/railwaytbm.jpeg','Leaving Joel\'s place after a long day'],
+                ['images/3rooted/home.jpeg','After train travel, we were home'],
                 ['images/3rooted/deco.jpeg','Joel\'s Flowery Crown, Jananie\'s Love'],
                 ['images/3rooted/hotel.jpeg','We were this 👌 close'],
                 ['images/3rooted/outing.jpeg','We went out for the first time'],
@@ -423,3 +424,4 @@ document.addEventListener('DOMContentLoaded', function () {
 //     `;
 //     throw new Error("Access denied");
 // }
+
