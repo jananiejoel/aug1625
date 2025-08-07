@@ -66,7 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Uncovering Our Core',
             desc: 'Our private time, just the two of us, felt like a special, quiet place where the rest of the world faded away. In those close moments, with our sweet romance, soft touches, and our own unique scent, we went deeper. We didn\'t just find; we truly uncovered who we are at our core – our shared dreams, the things we understood without words, and the deep love that connects our souls forever.',
             images: [
-                ['images/5kisses/img1.png',''],
+                ['images/5kisses/unforgettable.jpg','The unforgettable kiss that built our bond forever'],
+                ['images/5kisses/magical.jpg','The magical kiss that took us to another world'],
+                ['images/5kisses/sweet.jpg','The sweet kiss which should be framed'],
+                ['images/5kisses/playful.jpg','The playful kiss that made us laugh'],
+                ['images/5kisses/tender.jpg','The tender kiss that brought us closer'],
+                ['images/5kisses/hot.jpg', 'The hot kiss that made us blush'],
+                ['images/5kisses/lust.jpg','The lustful kiss that made us crave more'],
             ]
         },
         {
@@ -424,5 +430,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //     `;
 //     throw new Error("Access denied");
 // }
+
 
 
